@@ -24,4 +24,9 @@ public class SpringCloudFunctionApplication {
 		return str -> System.out.println("Received " + str);
 	}
 
+	@Bean
+	public Function<Person, String> fullName() {
+		return person -> String.format("%s %s", person.getFirstName(), person.getLastName());
+	}
+
 }
